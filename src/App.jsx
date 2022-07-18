@@ -1,11 +1,19 @@
 
 import classes from './styles/sass/App.module.scss'
 
+import { Route,Routes } from 'react-router-dom'
+
 function App() {
 
 
   return (
-    <h1 className={classes.h1}>sass</h1>
+    <>
+      <Routes>
+
+        <Route path='/' element={ <home /> } />
+
+      </Routes>
+    </>
       
   )
 }
