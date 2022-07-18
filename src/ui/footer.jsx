@@ -1,1 +1,0 @@
-import classes from './styles/sass/footer.module.scss';

@@ -1,1 +1,69 @@
 @import '../sass-veriables/veriable.scss';
+@import '../sass-mixins/mixins.scss';
+
+.header {
+    background-color: $primary-color;
+    height: 4.5rem;
+    width: 100%;
+    border-radius: 0 0 0.3rem 0.3rem ;
+    @include flex-box(row,space-around,center);
+
+    img{
+        height: auto;
+        width: 10rem;
+    }
+
+    div{
+        @include flex-box(row,space-around,center);
+
+        
+        h3{
+            color: $primary-color;
+            background-color: $secondary-color;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all ease-in-out 0.3s;
+            
+        }
+        h3:hover{
+            box-shadow: 0 0 1rem $secondary-color;
+        }
+
+        img{
+            height: auto;
+            width: 1.2rem;
+            padding-left: 5rem;
+        }
+
+
+        input{
+            color: $secondary-color;
+            outline: none;
+            background: transparent;
+            padding-bottom: 0.3rem;
+            margin: 1rem 0.5rem;
+            border: 0;
+            border-bottom: 1px solid white;
+            transition: border-bottom ease-in-out 0.1s ;
+
+        }
+        input:focus{
+            border-bottom: 2px solid $active-border;
+
+        }
+
+    }
+}
+
+.div{
+    @include flex-box(row,space-around,center);
+    padding-left: 30rem;
+
+    a{
+        text-decoration: none;
+    }
+
+}
+
