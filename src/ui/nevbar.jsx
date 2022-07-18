@@ -1,0 +1,1 @@
+import classes from './styles/sass/nevbar.module.scss';
