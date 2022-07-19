@@ -1,0 +1,15 @@
+
+@import '../sass-veriables/veriable.scss';
+@import '../sass-mixins/mixins.scss';
+
+
+
+.mainSection{
+    color: $primary-color;
+    @include flex-box(column,center,center);
+    height: 93vh;
+}
+
+.heading{
+    padding: 5vh;
+}
