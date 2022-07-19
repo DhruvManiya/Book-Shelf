@@ -7,9 +7,32 @@
 .mainSection{
     color: $primary-color;
     @include flex-box(column,center,center);
-    height: 93vh;
+    height: 84vh;
+
+    input{
+        color: $primary-color;
+        outline: none;
+        background-color: rgb(252, 247, 239);
+        padding: 0 1rem;
+        margin: 1rem 0.5rem;
+        border: 0;
+        transition: border-bottom ease-in-out 0.1s ;
+        width: 50rem;
+        height: 3rem;
+        border-radius: 4rem;
+        box-shadow: 0 0 0.5rem $secondary-color;
+        font-size: 1.1rem;
+    }
+    input:focus{
+        border-bottom: 2px solid $active-border;
+
+    }
+    p{
+        font-size: 1.2rem;
+    }
 }
 
 .heading{
     padding: 5vh;
+    font-size: 4rem;
 }

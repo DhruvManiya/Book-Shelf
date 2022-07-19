@@ -1,0 +1,16 @@
+
+@import '../sass-veriables/veriable.scss';
+@import '../sass-mixins/mixins.scss';
+
+
+
+
+.ul{
+    @include flex-box(row,center,center);
+    width: 100%;
+    overflow-y: hidden;
+
+    li{
+        text-decoration: none;
+    }
+}

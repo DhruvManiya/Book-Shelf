@@ -1,5 +1,4 @@
 
-
 import classes from './styles/sass/App.module.scss'
 
 import { Route,Routes,Navigate } from 'react-router-dom'
@@ -13,7 +12,6 @@ import TheFooter from './components/theFooter'
 
 
 function App() {
-
 
   return (
     <>
