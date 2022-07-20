@@ -14,7 +14,7 @@
         outline: none;
         background-color: rgb(252, 247, 239);
         padding: 0 1rem;
-        margin: 1rem 0.5rem;
+        margin: 1rem 0.5rem 0.3rem 0.5rem;
         border: 0;
         transition: border-bottom ease-in-out 0.1s ;
         width: 50rem;
@@ -35,4 +35,43 @@
 .heading{
     padding: 5vh;
     font-size: 4rem;
+}
+
+.div{
+    width: 50rem;
+    height: 28vh;
+    display: none;
+    transition: all ease-in-out 0.3s;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+
+.ul{
+    background-color: rgb(252, 247, 239);
+    width: 100%;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0.5rem $secondary-color;
+    @include flex-box(column,center,center);
+    
+    
+    li{
+        height: 6vh;
+        width: 100%;
+        @include flex-box(row,flex-start,center);
+        border-bottom: 1px solid rgb(223, 223, 223);
+        
+
+
+        img{
+            height: 6vh;
+            width: auto;
+        }
+    }
+}
+
+
+input:not(:placeholder-shown) + .div{
+    display: block;
 }
