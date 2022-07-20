@@ -1,4 +1,5 @@
 @import '../sass-veriables/veriable.scss';
+@import '../sass-mixins/mixins.scss';
 
 
 body{
@@ -9,4 +10,35 @@ body{
 *{
     margin: 0;
     padding: 0;
+}
+
+.styles-module_carousel-arrow__26sRw{
+    height: 50px;
+    width: 50px;
+    color: black;
+    background: transparent;
+    border: none;
+}
+
+.styles-module_carousel-arrow__26sRw::after{
+    content: url(../../../images/back.png);
+    width: 100%;
+}
+
+
+.styles-module_carousel-base__3keqD{
+    div:not(.styles-module_item-provider__YgMwz){
+        @include flex-box(row,center,center);
+    }
+}
+
+.styles-module_carousel-base__3keqD{
+    div:nth-child(3){
+
+        .styles-module_carousel-arrow__26sRw::after{
+            
+            content: url(../../../images/forword.png);
+            width: 100%;
+        }
+    }
 }

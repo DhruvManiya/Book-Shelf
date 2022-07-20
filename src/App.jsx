@@ -9,7 +9,10 @@ import Comics from '../src/pages/theComic'
 import TheNevbar from './components/theNevbar'
 import TheFooter from './components/theFooter'
 
-
+const copiright = {
+  copy:"something",
+  date:"01-01-2020"
+}
 
 function App() {
 
@@ -18,12 +21,15 @@ function App() {
       <TheNevbar />
         <Routes>
           <Route path='/' element={ <Navigate to='/home' /> } />
-          <Route path='/home' element={ <Home /> } />
+          <Route path='/home' element={ <Home data={copiright}/> } />
           <Route path='/books' element={ <Books /> } />
           <Route path='/comics' element={ <Comics /> } />
         </Routes>
 
-      <TheFooter />
+      <TheFooter 
+      copiright={copiright.copy}
+      date={copiright.date}
+      />
 
     </>
       

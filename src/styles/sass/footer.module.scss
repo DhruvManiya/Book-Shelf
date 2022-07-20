@@ -6,4 +6,5 @@
     background-color: $primary-color;
     @include flex-box(row,center,center);
     height: 15vh;
+    color: $secondary-color;
 }

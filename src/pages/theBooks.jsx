@@ -1,4 +1,5 @@
 import classes from '../styles/sass/books.module.scss';
+import { Carousel } from '@trendyol-js/react-carousel';
 
 const responce = [
     {
@@ -127,17 +128,50 @@ function theBooks() {
         <>
         
         <h1>testing...</h1>
-        <ul className={classes.ul}>
+        <Carousel show={9.5} slide={1} swiping={false} >
+		
 
         {responce.map((res) => {
-            return <li key={res.id}>
+            return <li className={classes.li} key={res.id}>
                 <img src={res.url} />
                 <h1>{res.name}</h1>
                 <p>{res.auther}</p>
                 <p>{res.publishDate}</p>
             </li>
         })}
-        </ul>
+
+        </Carousel>
+        
+        <h1>testing...</h1>
+        <Carousel show={9.5} slide={1} swiping={false} >
+		
+
+        {responce.map((res) => {
+            return <li className={classes.li} key={res.id}>
+                <img src={res.url} />
+                <h1>{res.name}</h1>
+                <p>{res.auther}</p>
+                <p>{res.publishDate}</p>
+            </li>
+        })}
+
+        </Carousel>
+        <h1>testing...</h1>
+        <Carousel show={9.5} slide={1} swiping={false} >
+		
+
+        {responce.map((res) => {
+            return <li className={classes.li} key={res.id}>
+                <img src={res.url} />
+                <h1>{res.name}</h1>
+                <p>{res.auther}</p>
+                <p>{res.publishDate}</p>
+            </li>
+        })}
+
+        </Carousel>
+
+
         </>
     )
 }
