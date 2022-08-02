@@ -61,12 +61,18 @@
         width: 100%;
         @include flex-box(row,flex-start,center);
         border-bottom: 1px solid rgb(223, 223, 223);
+        padding-left: 1rem;
+        cursor: pointer;
         
 
+        div{
+            padding-left: 1rem;
+        }
 
         img{
-            height: 6vh;
+            height: 5vh;
             width: auto;
+            padding: 0.5vh;
         }
     }
 }
@@ -74,4 +80,8 @@
 
 input:not(:placeholder-shown) + .div{
     display: block;
+}
+
+.bookAutherTitle{
+    @include flex-box(column,center,flex-start);
 }

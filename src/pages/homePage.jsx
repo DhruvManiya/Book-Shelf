@@ -29,19 +29,6 @@ function homePage() {
         }
       };
 
-const [displayUl,setDisplayUl] = useState(false);
-
-   
-useEffect(()=>{
-        
-
-    if(searchValue===''){
-        setDisplayUl(true);
-    }
-
-
-},[searchValue]);
-
 
     return (
         <div className={classes.mainSection}>
@@ -52,8 +39,11 @@ useEffect(()=>{
                 {                    
                     items.map((item) => {
                         return <li key={item.id}>
-                            <img src={item.volumeInfo.imageLinks.smallThumbnail} />
+                            <img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy"/>
+                            <div className={classes.bookAutherTitle}>
                             <p>{item.volumeInfo.title}</p>
+                            <i>{item.volumeInfo.authors[0]}</i>
+                            </div>
                         </li>
                     })
                 }
