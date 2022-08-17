@@ -7,7 +7,72 @@ import {useState ,useEffect} from 'react'
 
 
 
+// const testRes = [
+//     {
+//         rank:1,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:2,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:3,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:4,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:5,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:6,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:7,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:8,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:9,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     },
+//     {
+//         rank:10,
+//         book_image:"http://books.google.com/books/content?id=mToqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//         title:"test",
+//         author:"test"
+//     }
+// ];
+
 const responce = [
+    
+    
     {
         id:1,
         url:"../../images/bookShelfLinkLogo.png",
@@ -135,40 +200,69 @@ const responce = [
 
 function theBooks() {
 
-    const [items, setItems] = useState([]);
-    useEffect(() => {
-      top10();
-    }, []);
-  
     async function top10() {
-      try {
-        const res = await axios.get(
-          "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=aYGQXVh9xCDNAW9Li2rTnuiToUxhD9Kw"
-        );
-        console.log(res.data.results.books);
-        setItems(res.data.results.books);
-      } catch (e) {
-        console.log(e);
-      }
-    }
+        try {
+            const res = await axios.get(
+                "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=aYGQXVh9xCDNAW9Li2rTnuiToUxhD9Kw"
+                );
+                setMsg('msg')
+                
+                console.log(items);
 
+                setItems(res.data.results.books);
+                console.log(msg)
+            } catch (e) {
+                console.log(e);
+            }
+        };
+        
+        function top10Responce() {
+            items.map((item) => {
+                return (
+                    <div key={item.rank}>
+                  <li className={classes.li}>
+                      <img src={item.book_image} />
+                      <h1>{item.title}</h1>
+                      <p>{item.author}</p>
+                      <p>{item.rank}</p>
+                  </li>
+              </div>
+            );
+        })
+    };
+    
+    const [items, setItems] = useState([]);
+    const [msg, setMsg] = useState('');
+    const [lodding, setLodding] = useState(<p>lodding</p>);
+
+  
+    useEffect(() => {
+        top10();
+        setLodding(top10Responce());
+      }, [msg]);
+    
 
     return (
         <>
         
         <h1>Top 10...</h1>
-        <Carousel show={9.5} slide={1} swiping={false} >
+        <Carousel show={9.5} slide={1} transition={0.5}>
 		
-        {items.map((item) => {
+        {/* {items.map((item) => {
           return (
-            <li className={classes.li} key={item.rank}>
-              <img src={item.book_image} />
-              <h1>{item.title}</h1>
-              <p>{item.author}</p>
-              <p>{item.rank}</p>
-            </li>
+            <div key={item.rank}>
+                <li className={classes.li}>
+                    <img src={item.book_image} />
+                    <h1>{item.title}</h1>
+                    <p>{item.author}</p>
+                    <p>{item.rank}</p>
+                </li>
+            </div>
           );
-        })}
+        })        
+    } */}
+    {lodding}
+
 
         </Carousel>
         
