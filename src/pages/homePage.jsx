@@ -8,7 +8,6 @@ import {useState , useEffect, useId} from 'react'
 function homePage() {
     const [searchValue,setSearchValue] = useState('');
     const [items,setItems] = useState([]);
-    const id = useId()
     
     useEffect(()=>{
         
@@ -41,17 +40,7 @@ function homePage() {
             <input type="search" placeholder="Search books by it's name" onChange={e => setSearchValue(e.target.value)}/>
             <div className={classes.div}>
                 <ul className={classes.ul}>
-                {/* {                    
-                    items.map((item) => {
-                        return <li key={id}>
-                            <img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy" alt={searchValue}/>
-                            <div className={classes.bookAutherTitle}>
-                            <p>{item.volumeInfo.title}</p>
-                            {item.volumeInfo.authors[0] && <i>{item.volumeInfo.authors[0]}</i>}
-                            </div>
-                        </li>
-                    })
-                } */}
+                
                 {
                 !items.length ? 
                     <p>Items Not Found</p>
