@@ -13,6 +13,7 @@ const theBooks=()=> {
             const res = await axios.get(
                 "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=aYGQXVh9xCDNAW9Li2rTnuiToUxhD9Kw"
                 );
+
             const res2 = await axios.get(
                 "https://api.nytimes.com/svc/books/v3/lists/current/Business-books.json?api-key=aYGQXVh9xCDNAW9Li2rTnuiToUxhD9Kw"
                 );
@@ -41,6 +42,7 @@ const theBooks=()=> {
                 console.log(res5);
                 console.log(res6);
                 console.log(res7);
+
                 // console.log(res);
                 setItems(res.data.results.books);
                 
@@ -59,7 +61,7 @@ const theBooks=()=> {
 
     return (
         <>
-        
+
         <h1>Top 15 Fiction Books</h1>
         {items &&
         <Carousel show={9.5} slide={1} transition={0.5}>
@@ -81,7 +83,8 @@ const theBooks=()=> {
             </Carousel>}
 
 
-               
+
+
         </>
     )
 }
