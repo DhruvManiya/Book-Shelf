@@ -1,6 +1,6 @@
 import classes from '../styles/sass/homePage.module.scss';
 import axios from 'axios';
-import {useState , useEffect} from 'react'
+import {useState , useEffect, useId} from 'react'
 
 
 
@@ -8,11 +8,11 @@ import {useState , useEffect} from 'react'
 function homePage() {
     const [searchValue,setSearchValue] = useState('');
     const [items,setItems] = useState([]);
-    console.log(searchValue);
+    const id = useId()
     
     useEffect(()=>{
         
-        getUser(searchValue);
+        getUser(searchValue.replaceAll(" ",''));
 
     },[searchValue]);
     
@@ -21,14 +21,19 @@ function homePage() {
 
     async function getUser(userSerch) {
         try {
-          const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q= + ${userSerch} + &orderBy=newest&projection=full&key=AIzaSyAr3fNjJy4OTQfHW2CYdjOvPs04aPWvezQ`);
+          const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q= + ${userSerch} +intitle+&orderBy=newest&projection=full&key=AIzaSyAr3fNjJy4OTQfHW2CYdjOvPs04aPWvezQ`);
+          console.log(userSerch);
           console.log(res);
-          setItems(res.data.items);
+          if(!res.data.hasOwnProperty('items')){
+            setItems([]);
+          }else{
+            setItems(res.data.items);
+          }
+          console.log(res.data.items)
         } catch (error) {
           console.error(error);
         }
       };
-
 
     return (
         <div className={classes.mainSection}>
@@ -36,18 +41,33 @@ function homePage() {
             <input type="search" placeholder="Search books by it's name" onChange={e => setSearchValue(e.target.value)}/>
             <div className={classes.div}>
                 <ul className={classes.ul}>
-                {                    
+                {/* {                    
                     items.map((item) => {
-                        return <li key={item.id}>
-                            <img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy"/>
+                        return <li key={id}>
+                            <img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy" alt={searchValue}/>
                             <div className={classes.bookAutherTitle}>
                             <p>{item.volumeInfo.title}</p>
-                            <i>{item.volumeInfo.authors[0]}</i>
+                            {item.volumeInfo.authors[0] && <i>{item.volumeInfo.authors[0]}</i>}
                             </div>
                         </li>
                     })
+                } */}
+                {
+                !items.length ? 
+                    <p>Items Not Found</p>
+                : 
+                    items.map((item) => {
+                        return <li key={item.id}>
+                            {!item.volumeInfo.hasOwnProperty('imageLinks') ? <img src='' alt={searchValue}/> :<img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy"/>}
+                            <div className={classes.bookAutherTitle}>
+                            {!item.volumeInfo.hasOwnProperty('title') ? <p></p> : <p>{item.volumeInfo.title}</p>}
+                            {!item.volumeInfo.hasOwnProperty('authors') ? <i></i> :<i>{item.volumeInfo.authors[0]}</i>}
+                            </div>
+                        </li>
+                    })
+                
                 }
-                </ul> 
+                </ul>
             </div>
             <p>We gives rating of books so your next book become better for you</p>
         </div>

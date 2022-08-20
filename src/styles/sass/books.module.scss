@@ -7,21 +7,26 @@
 
 
 .li{
-    text-decoration: none;
-    background-color: aqua;
+    list-style: none;
     border-radius: 1rem;
     transform: scale(1);
     z-index: 1;
-    margin: 1.5rem;
+    margin: 1.5rem 0;
     height: 16rem;
     width: 8rem;
-    padding: 1rem;
+    padding: 1rem 0;
     transition: all ease-in-out 0.3s;
+    
+    
+    h1{
+        font-size: 1rem;
+    }
 }
 
 img{
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 10rem;
+
 }
 
 .li:hover{
