@@ -6,19 +6,123 @@
 
 
 
+@import '../sass-veriables/veriable.scss';
+@import '../sass-mixins/mixins.scss';
+
+
+
+.mainSection{
+    color: $primary-color;
+    @include flex-box(column,center,center);
+    height: 50vh;
+
+    input{
+        color: $primary-color;
+        outline: none;
+        background-color: rgb(252, 247, 239);
+        padding: 0 1rem;
+        margin: 1rem 0.5rem 0.3rem 0.5rem;
+        border: 0;
+        transition: border-bottom ease-in-out 0.1s ;
+        width: 50rem;
+        height: 3rem;
+        border-radius: 4rem;
+        box-shadow: 0 0 0.5rem $secondary-color;
+        font-size: 1.1rem;
+    }
+    input:focus{
+        border-bottom: 2px solid $active-border;
+
+    }
+    p{
+        font-size: 1.2rem;
+    }
+}
+
+.heading{
+    padding: 0 5vh 5vh 5vh;
+    font-size: 4rem;
+}
+
+.div{
+    width: 50rem;
+    height: 28vh;
+    display: none;
+    transition: all ease-in-out 0.3s;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+
+.ul{
+    background-color: rgb(252, 247, 239);
+    width: 100%;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0.5rem $secondary-color;
+    @include flex-box(column,center,center);
+    
+    
+    li{
+        height: 6vh;
+        width: 100%;
+        @include flex-box(row,flex-start,center);
+        border-bottom: 1px solid rgb(223, 223, 223);
+        padding-left: 1rem;
+        cursor: pointer;
+        
+
+        div{
+            padding-left: 1rem;
+        }
+
+        img{
+            height: 5vh;
+            width: auto;
+            padding: 0.5vh;
+        }
+    }
+}
+
+
+input:not(:placeholder-shown) + .div{
+    display: block;
+}
+
+.bookAutherTitle{
+    @include flex-box(column,center,flex-start);
+}
+
+
 .li{
-    text-decoration: none;
-    background-color: aqua;
+    list-style: none;
     border-radius: 1rem;
     transform: scale(1);
     z-index: 1;
-    margin: 1.5rem;
-    height: 14rem;
-    width: 8rem;
-    padding: 1rem;
+    margin: 1.5rem 0;
+    height: auto;
+    width: 9.25rem;
+    padding: 1rem 0;
     transition: all ease-in-out 0.3s;
+    @include flex-box(column,center,center);  
+    box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+    overflow: hidden;
+
     
 }
+
+.title{
+    font-size: 2rem;
+}
+
+h1{
+    font-size: 1rem;
+}
+.briffDesc{
+    @include flex-box(column,flex-start,flex-start);
+    padding-left: 0.25rem;
+}
+
 
 .li:hover{
     transform: scale(1.15);
