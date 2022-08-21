@@ -1,5 +1,5 @@
 
-import classes from '../styles/sass/comics.module.scss'
+import classes from '../styles/sass/magazines.module.scss'
 import { Carousel } from '@trendyol-js/react-carousel';
 
 const responce = [

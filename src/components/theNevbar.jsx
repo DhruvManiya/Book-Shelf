@@ -9,7 +9,7 @@ function theNevbar() {
             <div className={classes.div}>
                 <Link to='/home'><h3>Home</h3></Link>
                 <Link to='/books'><h3>Books</h3></Link>
-                <Link to='/comics'><h3>Comics</h3></Link>
+                <Link to='/magazines'><h3>Magazines</h3></Link>
             
             </div>
         </header>

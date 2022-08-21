@@ -5,7 +5,7 @@ import { Route,Routes,Navigate } from 'react-router-dom'
 
 import Home from '../src/pages/homePage'
 import Books from '../src/pages/theBooks'
-import Comics from '../src/pages/theComic'
+import Magazines from './pages/theMagazines'
 import TheNevbar from './components/theNevbar'
 import TheFooter from './components/theFooter'
 
@@ -18,7 +18,7 @@ function App() {
           <Route path='/' element={ <Navigate to='/home' /> } />
           <Route path='/home' element={ <Home /> } />
           <Route path='/books' element={ <Books /> } />
-          <Route path='/comics' element={ <Comics /> } />
+          <Route path='/magazines' element={ <Magazines /> } />
         </Routes>
 
       <TheFooter />

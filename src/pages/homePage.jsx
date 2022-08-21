@@ -11,7 +11,7 @@ function homePage() {
     
     useEffect(()=>{
         
-        getUser(searchValue.replaceAll(" ",''));
+        getUser(searchValue.replaceAll(" ",'+'));
 
     },[searchValue]);
     
