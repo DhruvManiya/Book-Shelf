@@ -6,8 +6,10 @@ import { Route,Routes,Navigate } from 'react-router-dom'
 import Home from '../src/pages/homePage'
 import Books from '../src/pages/theBooks'
 import Magazines from './pages/theMagazines'
-import TheNevbar from './components/theNevbar'
-import TheFooter from './components/theFooter'
+import TheNevbar from './ui/theNevbar'
+import TheFooter from './ui/theFooter'
+import Magazinepage from './pages/magazinePage'
+import Bookpage from './pages/ook'
 
 
 function App() {
@@ -18,7 +20,9 @@ function App() {
           <Route path='/' element={ <Navigate to='/home' /> } />
           <Route path='/home' element={ <Home /> } />
           <Route path='/books' element={ <Books /> } />
+          <Route path='/books/:id' element={ <BookPage /> } />
           <Route path='/magazines' element={ <Magazines /> } />
+          <Route path='/magazines/:id' element={ <Magazinepage /> } />
         </Routes>
 
       <TheFooter />

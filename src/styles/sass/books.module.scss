@@ -6,43 +6,6 @@
 
 
 
-.li{
-    list-style: none;
-    border-radius: 1rem;
-    transform: scale(1);
-    z-index: 1;
-    margin: 1.5rem 0;
-    height: 16rem;
-    width: 9.25rem;
-    padding: 1rem 0;
-    transition: all ease-in-out 0.3s;
-    @include flex-box(column,center,center);  
-    box-shadow: 0 0 2rem rgba(0,0,0,0.1);
-    overflow: hidden;
-
-    
-    
-}
-.briffDesc{
-    @include flex-box(column,flex-start,flex-start);
-    padding-left: 0.25rem;
-}
-
-
 .title{
     font-size: 2rem;
-}
-
-h1{
-    font-size: 1rem;
-}
-
-img{
-    height: 10rem;
-    width: auto;
-
-}
-
-.li:hover{
-    transform: scale(1.15);
 }

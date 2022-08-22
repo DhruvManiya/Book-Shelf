@@ -3,7 +3,7 @@ import classes from '../styles/sass/books.module.scss';
 import { Carousel } from '@trendyol-js/react-carousel';
 import axios from 'axios';
 import {useState ,useEffect} from 'react'
-
+import Bookscarousel from '../components/booksCarousel';
 
 const theBooks=()=> {
  const [fictions, setFiction] = useState(null);
@@ -56,100 +56,32 @@ const theBooks=()=> {
         {!fictions ?
         <p>books not found</p>
         :
-        <Carousel show={9.5} slide={1} transition={0.5}>
-		
-        { fictions.map((fiction) => {
-          return (
-            <div key={fiction.rank}>
-                <li className={classes.li}>
-                    <img src={fiction.book_image} />
-                    <section className={classes.briffDesc}>
-                        <h1>{fiction.title}</h1>
-                        <p>author - {fiction.author}</p>
-                        <p>rank - {fiction.rank}</p>
-                    </section>
-                </li>
-            </div>
-          );
-        })        
-    }
-   
-            </Carousel>}
+        <Bookscarousel items={fictions}/>
+        }
 
         <h1 className={classes.title}>Top 10 business Books</h1>
 
         {!businesses ?
         <p>books not found</p>
         :
-        <Carousel show={9.5} slide={1} transition={0.5}>
-		
-        { businesses.map((business) => {
-          return (
-            <div key={business.rank}>
-                <li className={classes.li}>
-                    <img src={business.book_image} />
-                    <section className={classes.briffDesc}>
-                        <h1>{business.title}</h1>
-                        <p>author - {business.author}</p>
-                        <p>rank - {business.rank}</p>
-                    </section>
-                </li>
-            </div>
-          );
-        })        
-    }
-   
-            </Carousel>}
+        <Bookscarousel items={businesses}/>
+        }
 
         <h1 className={classes.title}>Top 10 health Books</h1>
 
         {!healths ?
         <p>books not found</p>
         :
-        <Carousel show={9.5} slide={1} transition={0.5}>
-		
-        { healths.map((health) => {
-          return (
-            <div key={health.rank}>
-                <li className={classes.li}>
-                    <img src={health.book_image} />
-                    <section className={classes.briffDesc}>
-                        <h1>{health.title}</h1>
-                        <p>author - {health.author}</p>
-                        <p>rank - {health.rank}</p>
-                    </section>
-                </li>
-            </div>
-          );
-        })        
-    }
-   
-            </Carousel>}
+        <Bookscarousel items={healths}/>
+        }
 
         <h1 className={classes.title}>Top 10 science Books</h1>
 
         {!sciences ?
         <p>books not found</p>
         :
-        <Carousel show={9.5} slide={1} transition={0.5}>
-		
-        { sciences.map((science) => {
-          return (
-            <div key={science.rank}>
-                <li className={classes.li}>
-                    <img src={science.book_image} />
-                    <section className={classes.briffDesc}>
-                        <h1>{science.title}</h1>
-                        <p>author - {science.author}</p>
-                        <p>rank - {science.rank}</p>
-                    </section>
-                </li>
-            </div>
-          );
-        })        
-    }
-   
-            </Carousel>}
+        <Bookscarousel items={sciences}/>
+        }
 
 
         <h1 className={classes.title}>Top 10 family Books</h1>
@@ -157,25 +89,8 @@ const theBooks=()=> {
         {!family ?
         <p>books not found</p>
         :
-        <Carousel show={9.5} slide={1} transition={0.5}>
-		
-        { family.map((mamber) => {
-          return (
-            <div key={mamber.rank}>
-                <li className={classes.li}>
-                    <img src={mamber.book_image} />
-                    <section className={classes.briffDesc}>
-                        <h1>{mamber.title}</h1>
-                        <p>author - {mamber.author}</p>
-                        <p>rank - {mamber.rank}</p>
-                    </section>
-                </li>
-            </div>
-          );
-        })        
-    }
-   
-            </Carousel>}
+        <Bookscarousel items={family}/>
+        }
 
 
 
