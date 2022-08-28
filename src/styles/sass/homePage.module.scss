@@ -32,17 +32,18 @@
     }
 }
 
+
 .heading{
-    padding: 5vh;
+    padding: 15vh 5vh 5vh 5vh;
     font-size: 4rem;
 }
 
 .div{
     width: 50rem;
     height: 28vh;
-    display: none;
     transition: all ease-in-out 0.3s;
     overflow-x:hidden;
+    @include flex-box(column,center,center);
 
 }
 
@@ -60,7 +61,6 @@
     a{
         
         height: 6vh;
-        width: 100%;
         li{
             height: 6vh;
             width: 100%;
@@ -85,10 +85,76 @@
 }
 
 
-input:not(:placeholder-shown) + .div{
-    display: block;
+
+.resDesc{
+    font-size: 1rem
 }
+
 
 .bookAutherTitle{
     @include flex-box(column,center,flex-start);
 }
+
+@media screen and (max-width: 700px) {
+       .heading{
+           font-size: 3rem;
+       }
+}
+
+@media screen and (max-width: 850px) {
+    .mainSection{
+        input{
+                width:35rem;
+         }
+
+    }
+    .ul,.div{
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .mainSection{
+        height: 85vh;
+        input{
+                width:25rem;
+         }
+         p{
+            font-size: 0.9rem;
+        }
+    }
+    .ul,.div{
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .heading{
+        padding: 15vh 2.4vh 5vh 2.4vh;
+        font-size: 1.8rem;
+    }
+
+    .mainSection{
+        height: 85vh;
+        input{
+                width:18rem;
+         }
+         p{
+            font-size: 0.9rem;
+            width: 75%;
+        }
+    }
+    .ul,.div{
+        width: 18rem;
+    }
+    .resDesc{
+        font-size: 0.8rem;
+    }
+}
+
+
+

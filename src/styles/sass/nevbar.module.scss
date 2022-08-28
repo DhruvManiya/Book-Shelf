@@ -14,14 +14,9 @@
     }
 
     div{
-        @include flex-box(row,space-around,center);
 
         
         h3{
-            color: $primary-color;
-            background-color: $secondary-color;
-            padding: 0.5rem 1rem;
-            margin: 0.5rem;
             border-radius: 5px;
             cursor: pointer;
             transition: all ease-in-out 0.3s;
@@ -67,3 +62,62 @@
 
 }
 
+.displayNone{
+    display: none;
+}
+
+
+@media screen and (max-width: 1050px) {
+       .div{
+        padding-left: 10rem;
+       }
+}
+@media screen and (max-width: 700px) {
+    .div {
+        padding-left: 0rem;
+       }
+
+    .header{
+        height: 3.5rem;
+        img{
+            height: auto;
+            width: 7rem;
+        }
+        div{
+            h3{
+                padding: 0.25rem 0.5rem;
+                font-size: 1rem;
+            }
+        }
+    }
+    
+    
+      
+}
+.displayBtn{
+    color: $primary-color;
+    background-color: $secondary-color;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+}
+
+
+@media screen and (max-width: 480px){
+    .responsiveDisplayNone{
+        display: none;
+    }
+    .displayNone{
+        bottom: 0;
+        position: fixed;
+        display: block;
+        z-index: 1000;
+    }
+
+    .displayBtn{
+        color: $secondary-color;
+        background-color: rgba(255, 230, 188,0.1);
+    }
+    .div{
+        padding-top: 0.5rem;
+    }
+}
