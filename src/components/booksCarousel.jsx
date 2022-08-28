@@ -1,6 +1,7 @@
 
 import { Carousel } from '@trendyol-js/react-carousel';
 import classes from '../styles/sass/booksCarousel.module.scss'
+import {Link} from 'react-router-dom'
 
 
 var swaping = false;
@@ -17,16 +18,18 @@ const booksCarousel = ({items}) => {
 		
         { items.map((item) => {
           return (
-            <div key={item.rank}>
-                <li className={classes.li}>
-                    <img src={item.book_image} />
-                    <section className={classes.briffDesc}>
-                        <h1>{item.title}</h1>
-                        <p>author - {item.author}</p>
-                        <p>rank - {item.rank}</p>
-                    </section>
-                </li>
-            </div>
+            <Link to={`/books/${item.primary_isbn13}`}>
+                <div key={item.rank}>
+                    <li className={classes.li}>
+                        <img src={item.book_image} />
+                        <section className={classes.briffDesc}>
+                            <h1>{item.title}</h1>
+                            <p>author - {item.author}</p>
+                            <p>rank - {item.rank}</p>
+                        </section>
+                    </li>
+                </div>
+            </Link>
           );
         })        
     }

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import classes from '../styles/sass/magazines.module.scss'
-import { Carousel } from '@trendyol-js/react-carousel';
 import {useState , useEffect} from 'react'
 import Magazinescarousel from '../components/magazinesCarousel';
 

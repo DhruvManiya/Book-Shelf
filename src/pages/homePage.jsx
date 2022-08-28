@@ -1,13 +1,16 @@
 import classes from '../styles/sass/homePage.module.scss';
 import axios from 'axios';
 import {useState , useEffect, useId} from 'react'
-
+import {Link} from 'react-router-dom'
 
 
   
 function homePage() {
     const [searchValue,setSearchValue] = useState('');
     const [items,setItems] = useState([]);
+
+
+    
     
     useEffect(()=>{
         
@@ -20,19 +23,19 @@ function homePage() {
 
     async function getUser(userSerch) {
         try {
-          const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q= + ${userSerch} +intitle+&orderBy=newest&projection=full&key=AIzaSyAr3fNjJy4OTQfHW2CYdjOvPs04aPWvezQ`);
-          console.log(userSerch);
-          console.log(res);
+          const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${userSerch}intitle+&orderBy=newest&projection=full&key=AIzaSyAr3fNjJy4OTQfHW2CYdjOvPs04aPWvezQ`);
+          console.log(res)
           if(!res.data.hasOwnProperty('items')){
-            setItems([]);
+            setItems([])
           }else{
             setItems(res.data.items);
+            
           }
-          console.log(res.data.items)
         } catch (error) {
           console.error(error);
         }
       };
+
 
     return (
         <div className={classes.mainSection}>
@@ -46,13 +49,17 @@ function homePage() {
                     <p>Items Not Found</p>
                 : 
                     items.map((item) => {
-                        return <li key={item.id}>
-                            {!item.volumeInfo.hasOwnProperty('imageLinks') ? <img src='' alt={searchValue}/> :<img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy"/>}
-                            <div className={classes.bookAutherTitle}>
-                            {!item.volumeInfo.hasOwnProperty('title') ? <p></p> : <p>{item.volumeInfo.title}</p>}
-                            {!item.volumeInfo.hasOwnProperty('authors') ? <i></i> :<i>{item.volumeInfo.authors[0]}</i>}
-                            </div>
-                        </li>
+                        return <>{item.volumeInfo.hasOwnProperty('industryIdentifiers') ? 
+                        <Link to={`/books/${item.volumeInfo.industryIdentifiers[0].identifier}`}>
+                            <li key={item.id}>
+                              {!item.volumeInfo.hasOwnProperty('imageLinks') ? <img src='' alt={searchValue}/> :<img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy"/>}
+                              <div className={classes.bookAutherTitle}>
+                              {!item.volumeInfo.hasOwnProperty('title') ? <p></p> : <p>{item.volumeInfo.title}</p>}
+                              {!item.volumeInfo.hasOwnProperty('authors') ? <i></i> :<i>{item.volumeInfo.authors[0]}</i>}
+                              </div>
+                          </li>
+                        </Link> :
+                        <></>}</>
                     })
                 
                 }

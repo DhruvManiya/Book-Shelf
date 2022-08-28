@@ -9,3 +9,36 @@
     width: 100%;
     color: $secondary-color;
 }
+
+.container{
+    width: 60%;
+    @include flex-box(row,space-around,center);
+}
+
+.api{
+    @include flex-box(column,center,center);
+    a{
+        color: $secondary-color;
+        text-decoration: none;
+        margin: 0.3rem;
+    }
+}
+
+svg{
+    margin-top: 0.5rem;
+    width: 1.5rem;
+    height: auto;
+    color: $secondary-color;
+    background-color: $secondary-color;
+    padding: 0;
+    margin:0.5rem;
+        
+}
+
+.h1{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+

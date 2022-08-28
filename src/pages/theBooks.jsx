@@ -1,16 +1,15 @@
 
 import classes from '../styles/sass/books.module.scss';
-import { Carousel } from '@trendyol-js/react-carousel';
 import axios from 'axios';
 import {useState ,useEffect} from 'react'
 import Bookscarousel from '../components/booksCarousel';
+
 
 const theBooks=()=> {
  const [fictions, setFiction] = useState(null);
  const [businesses, setBusinesses] = useState(null);
  const [healths, setHealths] = useState(null);
  const [sciences, setSciences] = useState(null);
- const [family, setFamily] = useState(null);
 
     const fetchBooks= async ()=> {
         try {
@@ -27,15 +26,12 @@ const theBooks=()=> {
             const res4 = await axios.get(
                 "https://api.nytimes.com/svc/books/v3/lists/current/Science.json?api-key=DoLQkfxZ5AdNqff1OZO29zYjMoGcRA1i"
                 );
-            const res7 = await axios.get(
-                "https://api.nytimes.com/svc/books/v3/lists/current/Family.json?api-key=QUFhu0pHaPXsUmlQl23DCCECJrkyJz1r"
-                );
+
                 
                 setFiction(res1.data.results.books);
                 setBusinesses(res2.data.results.books);
                 setHealths(res3.data.results.books);
                 setSciences(res4.data.results.books);
-                setFamily(res7.data.results.books);
                 
             } catch (e) {
                 console.log(e);
@@ -82,18 +78,6 @@ const theBooks=()=> {
         :
         <Bookscarousel items={sciences}/>
         }
-
-
-        <h1 className={classes.title}>Top 10 family Books</h1>
-
-        {!family ?
-        <p>books not found</p>
-        :
-        <Bookscarousel items={family}/>
-        }
-
-
-
 
         </>
     )
