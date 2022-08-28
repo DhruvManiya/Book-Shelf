@@ -50,8 +50,8 @@ function bookPage(){
                         <p className={classes.totalPages}><b>Total Pages : </b>{desc.pageCount}</p>
                         <p className={classes.language}><i><b>Language : </b>{desc.language}</i></p>
                     </div>    
-                    <div>
-                        <i className={classes.authors}><b>Authors : </b>{authors==[] ? <i></i> : authors.map((author)=>{
+                    <div className={classes.autDesc}>
+                        <i className={classes.authors}><b>Authors:</b>{authors==[] ? <i></i> : authors.map((author)=>{
                             return <p>
                                 <i> {author},</i>
                             </p>

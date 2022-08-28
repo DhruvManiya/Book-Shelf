@@ -43,20 +43,32 @@ console.log(desc)
                 <h1 className= {classes.title}>Title : {desc.title}</h1>
                 <section className={classes.section}>
                     {imageLinks===null ? <img alt='image' className={classes.img}/> : <img className={classes.img} src={imageLinks.large} />}
+                    <div className={`${classes.discOfMegaInMega} ${classes.responsie}`}>
+                            <p className={classes.date}><b>Published-date :</b> {desc.publishedDate}</p>
+                            <p className={classes.publisher}><i><b>Publisher :</b> {desc.publisher}</i></p>
+                            <p className={classes.totalPages}><b>Total Pages :</b> {desc.pageCount}</p>
+                            <p className={classes.language}><i><b>Language :</b> {desc.language}</i></p>
+                            {readingModes.image && readingModes.text ? <p className={classes.moad}><b>Reading Moad :</b> Image, Text</p> : <></> }
+                            {readingModes.image ? <p className={classes.moad}><b>Reading Moad :</b> Image</p> : <></> }
+                            {readingModes.text ? <p className={classes.moad}><b>Reading Moad :</b> Text</p> :  <></> }
+                    </div>
                     <div className={classes.discOfMega}>
-                        <i className={classes.authors}>Authors :{authors==[] ? <i></i> : authors.map((author)=>{
+                        <i className={classes.authors}><b> Authors:</b>{authors==[] ? <i></i> : authors.map((author)=>{
                             return <p>
                                 <i>{author},</i>
                             </p>
                         })}</i>
-                        {desc.hasOwnProperty('description') && <p className={classes.description}>Description : {desc.description}</p>}
-                        <p className={classes.date}>Published-date : {desc.publishedDate}</p>
-                        <p className={classes.publisher}><i>Publisher : {desc.publisher}</i></p>
-                        <p className={classes.totalPages}>Total Pages : {desc.pageCount}</p>
-                        <p className={classes.language}><i>Language : {desc.language}</i></p>
-                        {readingModes.image && readingModes.text ? <p className={classes.moad}>Reading Moad : Image, Text</p> : <></> }
-                        {readingModes.image ? <p className={classes.moad}>Reading Moad : Image</p> : <></> }
-                        {readingModes.text ? <p className={classes.moad}>Reading Moad : Text</p> :  <></> }
+                        {desc.hasOwnProperty('description') && <p className={classes.description}><b> Description</b> : {desc.description}</p>}
+                        <div className={`${classes.discOfMegaInMega} ${classes.responsieNone}`}>
+                            <p className={classes.date}><b>Published-date :</b> {desc.publishedDate}</p>
+                            <p className={classes.publisher}><i><b>Publisher :</b> {desc.publisher}</i></p>
+                            <p className={classes.totalPages}><b>Total Pages :</b> {desc.pageCount}</p>
+                            <p className={classes.language}><i><b>Language :</b> {desc.language}</i></p>
+                            {readingModes.image && readingModes.text ? <p className={classes.moad}><b>Reading Moad :</b> Image, Text</p> : <></> }
+                            {readingModes.image ? <p className={classes.moad}><b>Reading Moad :</b> Image</p> : <></> }
+                            {readingModes.text ? <p className={classes.moad}><b>Reading Moad :</b> Text</p> :  <></> }
+                        </div>
+                        
                     </div>
                     
                 </section>
