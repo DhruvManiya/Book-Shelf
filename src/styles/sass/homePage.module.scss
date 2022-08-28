@@ -43,38 +43,45 @@
     display: none;
     transition: all ease-in-out 0.3s;
     overflow-x:hidden;
-    scroll-behavior: smooth;
+
 }
 
 .ul{
     background-color: rgb(252, 247, 239);
-    width: 100%;
+    width: 50rem;
+    height: 28vh;
+    transition: all ease-in-out 0.3s;
     overflow-x:hidden;
     scroll-behavior: smooth;
     border-radius: 0.2rem;
     box-shadow: 0 0 0.5rem $secondary-color;
-    @include flex-box(column,center,center);
+    @include flex-box(column,flex-start,flex-start);
     
-    
-    li{
+    a{
+        
         height: 6vh;
         width: 100%;
-        @include flex-box(row,flex-start,flex-start);
-        border-bottom: 1px solid rgb(223, 223, 223);
-        padding-left: 1rem;
-        cursor: pointer;
-        
-
-        div{
+        li{
+            height: 6vh;
+            width: 100%;
+            @include flex-box(row,flex-start,center);
+            border-bottom: 1px solid rgb(223, 223, 223);
             padding-left: 1rem;
-        }
-
-        img{
-            height: 5vh;
-            width: auto;
-            padding: 0.5vh;
+            cursor: pointer;
+            
+    
+            div{
+                padding-left: 1rem;
+            }
+    
+            img{
+                height: 5vh;
+                width: auto;
+                padding: 0.5vh;
+            }
         }
     }
+
 }
 
 
