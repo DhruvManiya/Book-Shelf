@@ -20,7 +20,6 @@ function bookPage(){
       async function fatchDetailsOfItem() {
         try {
             const res = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=isbn:${id}&key=AIzaSyAr3fNjJy4OTQfHW2CYdjOvPs04aPWvezQ`);
-            console.log(res)
             if(res.hasOwnProperty('data') ){    
                 setDesc(res.data.items[0].volumeInfo);
                 setImageLinks(res.data.items[0].volumeInfo.imageLinks);
@@ -34,7 +33,6 @@ function bookPage(){
         }
     };
 
-    console.log(desc);
     return(
         <>
         

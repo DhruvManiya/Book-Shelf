@@ -60,3 +60,23 @@ body{
     background: $secondary-color;
     border: 2px solid $active-border; 
 }  
+@media screen and (max-width: 700px){
+    .styles-module_carousel-arrow__26sRw{
+        height: 35px;
+        width: 35px;
+    }
+    
+    .styles-module_carousel-arrow__26sRw::after{
+        width: 70%;
+    }
+    
+    
+    .styles-module_carousel-base__3keqD{
+        div:nth-child(3){
+    
+            .styles-module_carousel-arrow__26sRw::after{                
+                width: 70%;
+            }
+        }
+    }
+}

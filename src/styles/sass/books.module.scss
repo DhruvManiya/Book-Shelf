@@ -9,3 +9,8 @@
 .title{
     font-size: 2rem;
 }
+@media screen and (max-width: 700px){ 
+    .title{
+        font-size: 1.2rem;
+    }
+}
