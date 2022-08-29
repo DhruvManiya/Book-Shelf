@@ -130,6 +130,10 @@
     .ul,.div{
         width: 25rem;
     }
+    .resDescForP{
+        height: 22px;
+        overflow: hidden;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -153,6 +157,10 @@
     }
     .resDesc{
         font-size: 0.8rem;
+    }
+    .resDescForP{
+        height: 18px;
+        overflow: hidden;
     }
 }
 

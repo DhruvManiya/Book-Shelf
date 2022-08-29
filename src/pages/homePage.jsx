@@ -65,7 +65,7 @@ function homePage() {
                               <li key={item.id}>
                                 {!item.volumeInfo.hasOwnProperty('imageLinks') ? <img src='' alt={searchValue}/> :<img src={item.volumeInfo.imageLinks.smallThumbnail} loading="lazy"/>}
                                 <div className={classes.bookAutherTitle}>
-                                {!item.volumeInfo.hasOwnProperty('title') ? <p></p> : <p className={classes.resDesc}>{item.volumeInfo.title}</p>}
+                                {!item.volumeInfo.hasOwnProperty('title') ? <p></p> : <p className={`${classes.resDesc} ${classes.resDescForP}`}>{item.volumeInfo.title}</p>}
                                 {!item.volumeInfo.hasOwnProperty('authors') ? <i></i> :<i className={classes.resDesc}>{item.volumeInfo.authors[0]}</i>}
                                 </div>
                             </li>

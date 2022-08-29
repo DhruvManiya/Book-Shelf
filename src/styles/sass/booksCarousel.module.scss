@@ -8,16 +8,15 @@
     border-radius: 1rem;
     transform: scale(1);
     z-index: 1;
-    margin: 1.5rem 0;
-    height: 16rem;
-    width: 9.25rem;
-    padding: 1rem 0;
+    margin: 1.5rem 2rem;
+    height: auto;
+    width: 9rem;
+    padding: 1rem 0.5rem;
     transition: all ease-in-out 0.3s;
     @include flex-box(column,center,center);  
     box-shadow: 0 0 2rem rgba(0,0,0,0.1);
     overflow: hidden;
 
-    
     
 }
 
@@ -51,3 +50,70 @@ img{
     }
 
 }
+
+
+@media screen and (max-width: 1100px){
+    .li{
+        margin: 1.5rem 1.8rem;
+        
+    }
+    
+}
+@media screen and (max-width: 1000px){
+    .li{
+        margin: 1.5rem 1.6rem;
+        
+    }
+    
+}
+@media screen and (max-width: 900px){
+    .li{
+        margin: 1.5rem 1.4rem;
+        
+    }
+    
+}
+@media screen and (max-width: 800px){
+    .li{
+        margin: 1.5rem 1.2rem;
+        
+    }
+    
+}
+
+
+@media screen and (max-width: 700px){
+
+    .resDesc{
+        font-size: 0.8rem;
+    
+    }
+    
+.li{
+    margin: 1.5rem 1rem;
+    
+}
+
+}
+@media screen and (max-width: 600px){
+    .li{
+        margin: 1.5rem 0.8rem;
+        
+    }
+
+}
+@media screen and (max-width: 500px){
+    .li{
+        margin: 1.5rem 0.6rem;
+        
+    }
+    
+}
+@media screen and (max-width: 400px){
+    .li{
+        margin: 1.5rem 0.4rem;
+        
+    }
+    
+}
+
