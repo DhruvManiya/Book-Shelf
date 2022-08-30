@@ -8,7 +8,7 @@ function theNevbar() {
     return(
         <>
             <header className={`${classes.header}`}>
-                <img src="../../images/bookshelf.jpg" alt="logo" />
+                <Link to='/'><div></div></Link>
                 <div className={`${classes.responsiveDisplayNone} ${classes.div}`}>
                     <Link to='/home'><h3 className={`${classes.displayBtn}`}>Home</h3></Link>
                     <Link to='/books'><h3  className={`${classes.displayBtn}`}>Books</h3></Link>
