@@ -8,14 +8,15 @@
     border-radius: 0 0 0.3rem 0.3rem ;
     @include flex-box(row,space-around,center);
 
-    a{
-        height: 4rem;
-        width: 10rem;
-        div{
-            height: 100%;
-            background-image: url('../../../images/bookshelf.jpg');
-            width: 100%;
-        }
+    .a{
+        height: 2.2rem;
+        width: 10rem;  
+        
+        background-size: cover;    
+        background-image: url('../../../images/bookshelf.jpg');
+           
+            
+        
     }
 
     div{
@@ -95,8 +96,7 @@
             }
         }
     }
-    
-    
+
       
 }
 .displayBtn{
